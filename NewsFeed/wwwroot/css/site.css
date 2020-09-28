@@ -1,0 +1,186 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+/* Customizations
+-------------------------------------------------- */
+
+.content-title-group {
+    margin-bottom: 16px;
+}
+
+.content-title-group h2 {
+    border-left: 16px solid #b52e31;
+    border-bottom: 2px solid #b52e31;
+    padding-left: 8px;
+    padding-right: 16px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 0px;
+}
+
+.content-title-group h2:hover {
+    color: #b52e31;
+}
+
+.content-title-group button.button {
+    border: 0;
+    color: #999;
+}
+
+.content-title-group button.button:hover {
+    color: #b52e31;
+}
+
+ul.list {
+    box-shadow: none;
+}
+
+div.card-content {
+    background-color: #fafafa;
+    background-color: #fafafa;
+   
+    padding: 1.5rem;
+}
+
+div.card-content .name {
+    font-size: 28px;
+    color: #000;
+}
+
+div.card-content .description {
+    font-size: 20px;
+    color: #999;
+}
+
+.card {
+    margin-bottom: 2em;
+}
+
+.card.vertical-center {
+    top:50%;
+}
+
+
+label.label {
+    font-weight: normal;
+}
+
+p.card-header-title {
+    background-color: #b52e31;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    display: block;
+    padding-left: 24px;
+}
+
+.card-footer button {
+    font-size: 16px;
+    color: #888;
+}
+
+.card-footer button i {
+    margin-right: 10px;
+}
+
+.card-footer button:hover {
+    color: #b52e31;
+}
+
+.modal-card-foot button {
+    display: inline-block;
+    width: 80px;
+}
+
+.modal-card-head, .modal-card-body {
+    text-align: center;
+}
+
+.field {
+    margin-bottom: 0.75rem;
+}
+
+.navbar-burger {
+    margin-left: auto;
+}
+
+button.link {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.label {
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+}
+
+#partial-feed {
+    margin-top:20px;
+}
+
+#SeeSubscriptions {
+    display:none;
+}
+
+.btn.category{
+   margin-top:5px;
+}

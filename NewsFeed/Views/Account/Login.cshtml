@@ -1,0 +1,39 @@
+﻿@using NewsFeed.Models.ViewModels
+@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Activar Usuario";
+}
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="section row">
+    <div class="col-sm-4 offset-4">
+        <div class="card vertical-center">
+            <div class="card-content">
+                <div class="content">
+                    <form method="post" asp-controller="Account" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl">
+                        <div asp-validation-summary="@ValidationSummary.ModelOnly"></div>
+
+                        <div class="form-group">
+                            <label asp-for="Username"></label>
+                            <input class="form-control" asp-for="Username" />
+                            <span asp-validation-for="Username"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="password" class="form-control" asp-for="Password" />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <input class="btn btn-primary" type="submit" value="Login" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@using NewsFeed.Models.ViewModels
+@model IEnumerable<NewsViewModel>
+
+   
+    @foreach (var item in Model)
+    {
+        <div role="presentation">
+            <div class="card">
+                <div>
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="name">@item.Title</div>
+                            <div class="description">@item.Content</div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <div class="float-right">@item.Created.ToShortDateString()</div>
+                    <div>@item.Category</div>
+                </footer>
+            </div>
+        </div>
+    }
+
+
+
+
+
+
+

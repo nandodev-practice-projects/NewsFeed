@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="section row">
+    <div class="col-sm-2">
+        <h5>Categories to subscribe</h5>
+        <div class="list" id="partial-categories"></div>
+    </div>
+    <div class="col-sm-8">
+        <!-- Button trigger modal -->
+        @if (User.IsInRole("Publisher"))
+        {
+            <button type="button" id="AddNews" class="btn btn-light" role="button" data-toggle="modal" data-target="#add-news">
+                Add News
+            </button>
+        }
+       
+        <a id="SeeAllNews" class="btn btn-info" href="#" role="button" onclick="GetAllNews()">See All News</a>
+        <a id="SeeSubscriptions" class="btn btn-info" href="#" role="button" onclick="GetSubscriptionsNews()">See News of Subscriptions</a>
+
+        <form class="form-inline float-right">
+            <input class="form-control mr-sm-4" type="search" id="text-search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-info my-2 my-sm-0" onclick="Search()" id="btn-search">Search</button>
+        </form>
+
+        <div class="list" id="partial-feed"></div>
+    </div>
+</div>
+
+<!-- Modal Add New -->
+<div class="modal fade" id="add-news" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscription" data-id="">Add news</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <partial name="~/Views/News/_AddNews.cshtml" />
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/lib/aspnet-signalr/signalr.min.js"></script>
+    <script src="~/lib/toastr.js/toastr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!--Signalr-->
+    <script>
+
+        let startConnection = () => {
+            connection.start()
+                .then(e => {
+                    $("#connetion-status").text("Connection opened");
+                    $("#connetion-status").css("color", "green");
+                })
+                .catch(err => console.log(err));
+        };
+
+        //let connection = new signalR.HubConnection(`http://${document.location.host}/publications`, 'formatType=json&format=text');
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/publications")
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        startConnection();
+
+        connection.onClosed = e => {
+            if (e) {
+                $("#connetion-status").text("Connection closed " + e);
+                $("#connetion-status").css("color", "red");
+            }
+            else {
+                $("#connetion-status").text("Connection closed");
+                $("#connetion-status").css("color", "green");
+            }
+            startConnection();
+        };
+
+        connection.on('UpdateFeed', (message) => {
+            toastr.success(message);
+            GetSubscriptionsNews()
+        });
+    </script>
+}
+
