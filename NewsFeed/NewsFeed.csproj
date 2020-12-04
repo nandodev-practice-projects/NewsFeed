@@ -26,6 +26,11 @@
     <PackageReference Include="SqlTableDependency" Version="8.5.8" />
     <PackageReference Include="toastr" Version="2.1.1" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="DB\" />
+  </ItemGroup>
   
 
 </Project>
