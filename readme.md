@@ -1,5 +1,5 @@
 ---------------------------------
-SAMPLE WEB APPLICATION NEWSFEED
+SAMPLE .NET CORE 3.1 WEB APPLICATION NEWSFEED
 ---------------------------------
 Prerequisites and Installation Requirements
 
